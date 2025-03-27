@@ -7,7 +7,6 @@ import prisma from "@/lib/prisma";
 
 export default async function NotFound() {
   const schools = await prisma.school.findMany({});
-  const subdomainUrl = `http://www.${process.env.NEXT_PUBLIC_BASE_URL}`;
 
   return (
     <div className="container mx-auto p-6 flex justify-center items-center min-h-screen">
@@ -18,7 +17,7 @@ export default async function NotFound() {
         </CardHeader>
         <CardContent className="text-center">
           <p className="mb-6 text-muted-foreground">The school you are looking for does not exist or is not available.</p>
-          <Link href={subdomainUrl} rel="noopener noreferrer">
+          <Link href={"/"} rel="noopener noreferrer">
             <Button variant="outline" size="lg">
               Return to Home
             </Button>
@@ -28,7 +27,7 @@ export default async function NotFound() {
           <p className="mb-6 text-muted-foreground">Visit our other schools</p>
           <div className="flex flex-col gap-2 w-full">
             {schools.slice(0, 3).map((school) => {
-              const subdomainUrl = `http://${school.subdomain}.${process.env.NEXT_PUBLIC_BASE_URL}`;
+              const subdomainUrl = `http://${school.subdomain}.${process.env.NEXT_PUBLIC_DOMAIN_NAME}`;
               return (
                 <Link className="w-full" href={subdomainUrl} key={`school-${school.id}`} rel="noopener noreferrer">
                   <Button className="w-full" variant="outline" size="lg">

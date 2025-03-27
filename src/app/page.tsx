@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
-  const subdomainUrl = `http://admin.${process.env.NEXT_PUBLIC_BASE_URL}`;
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
       <Card className="w-full max-w-4xl">
@@ -16,7 +15,7 @@ export default function Home() {
             with a broader community.
           </p>
           <div className="flex justify-center space-x-4">
-            <Link href={subdomainUrl} rel="noopener noreferrer">
+            <Link href="/admin/dashboard" rel="noopener noreferrer">
               <Button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Get Started</Button>
             </Link>
             <Button className="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400">Learn More</Button>
