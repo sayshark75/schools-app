@@ -2,6 +2,12 @@
 
 This is a Next.js-based School Management System with authentication, role-based access control, and seamless navigation across admin and school-specific routes.
 
+## Usage Test Credentials
+
+```bash
+credentials.email === "admin@school.com" && credentials.password === "adminpassword"
+```
+
 ## 🚀 Features Implemented
 
 ✅ **Home Page at `/`** - Accessible directly at `localhost:3000` without requiring `www.`.  
