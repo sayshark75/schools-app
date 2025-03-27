@@ -3,10 +3,10 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const hostname = request.headers.get("host") || "";
-  const isLocalhost = hostname.startsWith("localhost");
+  const isLocalhost = hostname.startsWith("schools-app-xi");
 
   // Handle localhost or root domain (no subdomain)
-  if (isLocalhost || hostname === "example.com") {
+  if (isLocalhost || hostname === "schools-app-xi.vercel.app") {
     return NextResponse.next(); // Let Next.js handle the root domain normally
   }
 
